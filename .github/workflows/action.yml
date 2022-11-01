@@ -5,12 +5,14 @@ on:
 
 jobs:
   build_application:
-    container: node:16
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ./gradlew build
       - run: dir
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      - run: ./gradlew build
       - uses: actions/upload-artifact@v3
         with:
           name: build
