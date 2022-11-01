@@ -8,7 +8,7 @@ jobs:
     container: node:16
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3
+      - uses: actions/checkout@v3
       - run: ./gradlew build
       - run: dir
       - uses: actions/upload-artifact@v3
