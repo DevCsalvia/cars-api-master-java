@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repository checkout
-      - uses: actions/checkout@3
+        uses: actions/checkout@3
       - name: Gradle build
       - run: ./gradlew build
       - name: Upload built public folder
