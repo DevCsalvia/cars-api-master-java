@@ -1,0 +1,21 @@
+name: Build java application
+description: Checks out the repository, build gradle application.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build_application:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository checkout
+      - uses: actions/checkout@3
+      - name: Gradle build
+      - run: ./gradlew build
+      - name: Upload built public folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: ./build/libs
+      - run: dir
