@@ -5,13 +5,11 @@ on:
 
 jobs:
   build_application:
+    container: openjdk:12-alpine
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: dir
-      - uses: actions/setup-java@v1
-        with:
-          java-version: 16
       - run: ./gradlew build
       - uses: actions/upload-artifact@v3
         with:
