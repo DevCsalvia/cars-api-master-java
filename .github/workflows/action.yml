@@ -1,0 +1,16 @@
+name: Build java application
+
+on:
+  pull_request:
+
+jobs:
+  build_application:
+    container: openjdk:12-alpine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./gradlew build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: ./build/libs
