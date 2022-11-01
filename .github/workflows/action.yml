@@ -1,5 +1,4 @@
 name: Build java application
-description: Checks out the repository, build gradle application.
 
 on:
   push:
