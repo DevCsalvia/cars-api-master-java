@@ -2,6 +2,9 @@ name: Build java application
 
 on:
   push:
+    branches:
+      - master
+      - develop
   pull_request:
 
 jobs:
